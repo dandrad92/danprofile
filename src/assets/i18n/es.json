@@ -1,0 +1,11 @@
+{
+    "about": {
+      "title": "Sobre Mí",
+      "description": "Soy un Cloud Engineer y Desarrollador Full Stack con experiencia en Azure, AWS, Terraform y Kubernetes."
+    },
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "darkMode": "Modo Oscuro"
+  }
+  
