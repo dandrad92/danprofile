@@ -1,21 +1,95 @@
-<nav class="fixed top-0 left-0 w-full bg-blue-600 text-white p-4 flex justify-between items-center shadow-lg dark:bg-gray-900">
-  <h1 class="text-2xl font-bold tracking-wide">Mi Perfil</h1>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-600 to-blue-700 dark:from-gray-900 dark:to-gray-800 text-white z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo/Brand -->
+      <a href="#" class="text-2xl font-bold tracking-wider hover:text-blue-200 transition-colors">
+        DA
+      </a>
 
-  <div class="flex items-center space-x-6">
-    <ul class="flex space-x-6 text-lg">
-      <li><a href="#about" class="hover:text-gray-200 transition-all">Sobre Mí</a></li>
-      <li><a href="#experience" class="hover:text-gray-200 transition-all">Experiencia</a></li>
-      <li><a href="#skills" class="hover:text-gray-200 transition-all">Habilidades</a></li>
-      <li><a href="#contact" class="hover:text-gray-200 transition-all">Contacto</a></li>
-    </ul>
-    <button (click)="toggleDarkMode()" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all">
-      🌞 / 🌙
-    </button>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <ul class="flex space-x-8 text-sm font-medium">
+          <li><a href="#about" class="hover:text-blue-200 transition-colors py-2">About</a></li>
+          <li><a href="#experience" class="hover:text-blue-200 transition-colors py-2">Experience</a></li>
+          <li><a href="#skills" class="hover:text-blue-200 transition-colors py-2">Skills</a></li>
+          <li><a href="#contact" class="hover:text-blue-200 transition-colors py-2">Contact</a></li>
+        </ul>
+
+        <!-- Theme & Language Controls -->
+        <div class="flex items-center space-x-4">
+          <button (click)="toggleDarkMode()" 
+                  class="p-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 dark:bg-gray-700/50 dark:hover:bg-gray-700/70 transition-all">
+            <span class="dark:hidden">🌞</span>
+            <span class="hidden dark:inline">🌙</span>
+          </button>
+
+          <select (change)="switchLanguage($event)" 
+                  class="p-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 dark:bg-gray-700/50 dark:hover:bg-gray-700/70 text-sm font-medium">
+            <option value="es">🇪🇸 ES</option>
+            <option value="en">🇺🇸 EN</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button (click)="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-blue-500/20 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
   </div>
-  <select (change)="switchLanguage($event)" class="p-2 rounded bg-gray-200 dark:bg-gray-700">
-    <option value="es">🇪🇸 Español</option>
-    <option value="en">🇺🇸 English</option>
-  </select>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="#about" class="block px-3 py-2 rounded-md hover:bg-blue-500/20 transition-colors">About</a>
+      <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-blue-500/20 transition-colors">Experience</a>
+      <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-blue-500/20 transition-colors">Skills</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-blue-500/20 transition-colors">Contact</a>
+    </div>
+  </div>
 </nav>
+
+<!-- Header/Hero Section -->
+<header class="relative pt-16 pb-8 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+      <!-- Text Content -->
+      <div class="w-full md:w-2/3 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+          Daniel Andrade
+        </h1>
+        <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
+          System Administrator & DevOps Engineer
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-2xl">
+          Seasoned IT professional with over 7+ years of experience in System Administration, 
+          Cloud Computing, DevOps, and IT Infrastructure Management.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#contact" 
+             class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors text-center">
+            Contact Me
+          </a>
+          <a href="#" 
+             class="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-500 text-blue-700
+                    px-8 py-3 rounded-lg transition-colors text-center">
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 relative">
+        <div class="absolute inset-0 bg-blue-600 dark:bg-blue-500 rounded-full opacity-10 blur-2xl"></div>
+        <img src="assets/profile.jpg" 
+             alt="Daniel Salvador" 
+             class="relative rounded-full object-cover w-full h-full shadow-xl border-4 border-white dark:border-gray-700">
+      </div>
+    </div>
+  </div>
+</header>
 
 

@@ -1,9 +1,32 @@
-<div class="container mx-auto px-6 py-12 space-y-16 max-w-4xl">
-  <app-header></app-header>
-  <app-about></app-about>
-  <app-experience></app-experience>
-  <app-skills></app-skills>
-  <app-contact></app-contact>
-  
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-5xl">
+    <!-- Header section with larger top margin -->
+    <div class="mb-16 sm:mb-20">
+      <app-header></app-header>
+    </div>
+
+    <!-- Main content sections with consistent spacing -->
+    <div class="space-y-16 sm:space-y-24 lg:space-y-32">
+      <section class="backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 sm:p-8">
+        <app-about></app-about>
+      </section>
+
+      <section class="backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 sm:p-8">
+        <app-experience></app-experience>
+      </section>
+
+      <section class="backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 sm:p-8">
+        <app-skills></app-skills>
+      </section>
+
+      <section class="backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 rounded-2xl shadow-xl p-6 sm:p-8">
+        <app-contact></app-contact>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer with proper spacing and background -->
+  <div class="mt-16 border-t border-gray-200 dark:border-gray-700">
+    <app-footer></app-footer>
+  </div>
 </div>
-<app-footer></app-footer>
